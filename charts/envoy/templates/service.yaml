@@ -16,5 +16,8 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+  topologyKeys:
+    - "topology.kubernetes.io/zone"
+    - "topology.kubernetes.io/region"
   selector:
     {{- include "envoy.selectorLabels" . | nindent 4 }}
